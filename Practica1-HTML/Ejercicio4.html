@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercitación 4</title>
+    </head>
+    <body>
+        <a href="https://www.frro.utn.edu.ar/"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/UTN_logo.jpg?utm_source=es.wikiversity.org&utm_campaign=index&utm_content=original" alt="UTN-FRRO" width="80" height="60"></a>    
+        
+        <hr>
+
+        <h2>AÑO 2008</h2>
+
+        <table class="examenes">
+        <tr>
+            <th colspan="2">Exámenes</th>
+        </tr>
+        <tr>
+            <td class="fecha" rowspan="2">Fecha: ………………………..</td>
+            <td>Aprobados</td>
+        </tr>
+        <tr>
+            <td>24/30</td>
+        </tr>
+        </table>
+
+        <ol>
+        <li><a href="#enunciado">Enunciado del examen</a></li>
+        <li><a href="resolucion.html" target="_blank">Resolución</a></li>
+        </ol>
+
+        <p>Puede realizar consultas completando el siguiente formulario:</p>
+        <form action="mailto:x@x.com" method="post" enctype="text/plain">
+        <table>
+            <tr>
+            <td><label for="email">e-mail:</label></td>
+            <td><input type="text" id="email" name="email" size="22"></td>
+            </tr>
+            <tr>
+            <td><label for="consulta">consulta:</label></td>
+            <td><textarea id="consulta" name="consulta" rows="5" cols="22"></textarea></td>
+            </tr>
+        </table>
+        <input type="submit" value="ENVIAR">
+        <input type="reset" value="BORRAR">
+        </form>
+
+        <h3 id="enunciado">Enunciado del examen</h3>
+
+        <div>
+        <p>Ejercicio 1: ……………………………………………………………</p>
+        <p>Ejercicio 2: ……………………………………………………………</p>
+        </div>
+
+        <p>Para más información dirigirse a <a href="mailto:contacto@xx.com">contacto@xx.com</a></p>
+
+    </body>
+</html>
+<style>
+        body { 
+            font-family: "Times New Roman", serif; 
+            margin: 20px; 
+        }
+        
+        table.examenes {
+            border-collapse: collapse; 
+            width: 450px; 
+            text-align: center; 
+        }
+        
+        table.examenes th, table.examenes td {
+            border: 1px solid #999; 
+            padding: 2px 6px; 
+        }
+        
+        table.examenes td.fecha {
+            text-align: left; 
+        }
+        
+        label {
+            font-weight: bold; 
+        }        
+</style>
