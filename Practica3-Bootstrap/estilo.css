@@ -1,0 +1,16 @@
+/* Práctica 1 - clase "contenedor" con color de fondo */
+.contenedor {
+    background-color: #d9ecf7;
+}
+ 
+/* Bloques de color usados en las maquetas de las prácticas 2 y 3 */
+.bloque        { min-height: 70px; }
+.encabezado    { min-height: 110px; }
+.c-violeta     { background-color: #a67ea8; }
+.c-durazno     { background-color: #f9e6d9; }
+.c-rosa        { background-color: #e1b0b0; }
+.c-salmon      { background-color: #f4d9d0; }
+.c-verde       { background-color: #69cc82; }
+.c-grisvioleta { background-color: #9c8d97; }
+.c-azul        { background-color: #7b9dcc; }
+ 
