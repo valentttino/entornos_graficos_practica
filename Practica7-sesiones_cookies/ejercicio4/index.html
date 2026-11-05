@@ -1,0 +1,51 @@
+<?php
+/* Ejercicio 4 - Periódico: el titular elegido se guarda en una cookie */
+$titulares = array(
+    'politica'  => array('Noticia política',  'El oficialismo y la oposición negocian los cambios al proyecto de presupuesto.'),
+    'economica' => array('Noticia económica', 'El mercado espera nuevos datos de inflación tras una semana de leves variaciones.'),
+    'deportiva' => array('Noticia deportiva','La selección se prepara para el próximo partido con la mira puesta en la clasificación.')
+);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $elegido = isset($_POST['titular']) ? $_POST['titular'] : '';
+    if (isset($titulares[$elegido])) {
+        setcookie('titular', $elegido, time() + 60 * 60 * 24 * 30);
+    }
+    header('Location: index.php');
+    exit;
+}
+
+// Primera visita (sin cookie): se muestran los tres titulares
+$preferido = (isset($_COOKIE['titular']) && isset($titulares[$_COOKIE['titular']])) ? $_COOKIE['titular'] : '';
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>El Diario</title>
+</head>
+<body>
+  <h1>EL DIARIO</h1>
+  <hr>
+
+  <?php foreach ($titulares as $clave => $datos) {
+      if ($preferido === '' || $preferido === $clave) { ?>
+    <h2><?php echo $datos[0]; ?></h2>
+    <p><?php echo $datos[1]; ?></p>
+  <?php } } ?>
+
+  <hr>
+  <form action="index.php" method="post">
+    <p>¿Qué titular querés ver al visitar el sitio?</p>
+    <?php foreach ($titulares as $clave => $datos) { ?>
+      <label>
+        <input type="radio" name="titular" value="<?php echo $clave; ?>" <?php echo ($clave === $preferido) ? 'checked' : ''; ?>>
+        <?php echo $datos[0]; ?>
+      </label><br>
+    <?php } ?>
+    <p><input type="submit" value="Guardar preferencia"></p>
+  </form>
+
+  <p><a href="borrar_cookie.php">Borrar mi preferencia</a></p>
+</body>
+</html>
